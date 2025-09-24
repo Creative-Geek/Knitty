@@ -1,0 +1,21 @@
+{
+  "job_title": "Software Engineer - FastAPI",
+  "role_summary": "Everything To Gain is seeking a passionate Software Engineer to join their team. The role involves developing cutting-edge software solutions for clients, working with a cross-functional team to deliver high-quality products on time, and driving innovation to improve application performance.",
+  "key_responsibilities": [
+    "Developing cutting-edge software solutions for clients.",
+    "Working closely with a cross-functional team.",
+    "Ensuring high-quality software products are delivered on time.",
+    "Driving innovation and improving the overall performance of applications."
+  ],
+  "required_qualifications": [
+    "Proven experience working with FastAPI.",
+    "Strong proficiency in Python.",
+    "Well-versed in working with React.",
+    "Solid understanding of Typescript."
+  ],
+  "preferred_qualifications": [
+    "Experience with Arq for handling background tasks.",
+    "Familiarity with deployment platforms such as Render and Railway.",
+    "Knowledge of Google Cloud Platform (GCP)."
+  ]
+}
