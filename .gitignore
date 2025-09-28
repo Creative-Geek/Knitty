@@ -208,5 +208,5 @@ __marimo__/
 
 # Other stuff
 Playground
-examples/cv.html
-examples/cv.pdf
+examples/cv*.html
+docs/SCORING_PROCESS.md
