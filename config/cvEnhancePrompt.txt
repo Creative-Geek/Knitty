@@ -11,6 +11,7 @@ You are an expert resume editor and talent acquisition specialist. Your task is 
     - The current cosine similarity score is {currentCosineSimilarity:.4f}. Revise the resume to further increase this score.
     - Removing irrelevant information from the resume that does not contribute to the job application.
     - Only reusing existing information rather than make up new information.
+    - Using simple and a bit of a naive language throughout the resume.
 - ONLY output the improved updated resume. Do not include any explanations, commentary, or formatting outside of the resume itself.
 
 **Job Description:**
