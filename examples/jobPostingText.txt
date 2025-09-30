@@ -1,21 +1,31 @@
-{
-  "job_title": "Software Engineer - FastAPI",
-  "role_summary": "Everything To Gain is seeking a passionate Software Engineer to join their team. The role involves developing cutting-edge software solutions for clients, working with a cross-functional team to deliver high-quality products on time, and driving innovation to improve application performance.",
-  "key_responsibilities": [
-    "Developing cutting-edge software solutions for clients.",
-    "Working closely with a cross-functional team.",
-    "Ensuring high-quality software products are delivered on time.",
-    "Driving innovation and improving the overall performance of applications."
-  ],
-  "required_qualifications": [
-    "Proven experience working with FastAPI.",
-    "Strong proficiency in Python.",
-    "Well-versed in working with React.",
-    "Solid understanding of Typescript."
-  ],
-  "preferred_qualifications": [
-    "Experience with Arq for handling background tasks.",
-    "Familiarity with deployment platforms such as Render and Railway.",
-    "Knowledge of Google Cloud Platform (GCP)."
-  ]
-}
+IT Intern
+ Cairo, Egypt
+Job Openings  IT Intern
+About the job IT Intern
+Join our team today!
+Embrace the opportunity to grow and learn within a leading global company that values your contributions. At BayanTech, we foster innovation, talent development, and inclusivity. Experience a supportive work environment with opportunities for growth and a hybrid work model to promote work-life balance. If you are enthusiastic about IT and thrive in diverse environments, we invite you to join our team!
+
+Job Summary:
+We are looking for a highly motivated IT Intern to support our IT team in various tasks and gain hands-on experience in troubleshooting, system administration, and customer support. This internship is designed to provide practical exposure to both technical and soft skills in the IT support and service desk domain. You will have the opportunity to enhance your skills in Windows OS installation, network troubleshooting, software support, data management, and more.
+
+Key Responsibilities:
+
+Assist in installing, configuring, and updating Windows operating systems. Troubleshoot and resolve OS-related issues, including driver updates and hardware compatibility.
+Support the installation and configuration of software applications such as Microsoft Office, web browsers, and security tools.﻿
+Assist with troubleshooting network issues related to LAN/WAN, Wi-Fi connectivity, and VPN configurations.
+Perform local data backup and restore operations to ensure data safety and disaster recovery.
+Solve IT issues related to operating system errors, application crashes, and network connectivity.
+Help in managing antivirus software and endpoint protection solutions, ensuring security policies are enforced across systems.
+Implement strategies to back up users' data and ensure they have safe copies of their files and documents.
+Assist with handling real employee IT tickets, providing support via email, phone, or in person. Focus on improving customer service and problem-solving skills.
+Provide remote IT support using tools such as RDP, TeamViewer, and AnyDesk. Troubleshoot issues remotely to improve response time.
+Follow best practices for documenting IT issues, solutions, and updates. Maintain detailed reports and contribute to security awareness.
+Take full ownership of tickets from request to resolution, and ensure follow-up with end-users to verify satisfaction.
+Collaborate with other departments and provide assistance in various IT projects. Conclude your internship with a final assessment of both technical skills and teamwork abilities.
+Qualifications:
+
+Currently pursuing or recently graduated with a degree in IT, Business Administration, CS, or a related field.
+Strong interest in recruitment and talent acquisition.
+Excellent verbal and written communication skills.
+Strong organizational skills and attention to detail.
+Proficiency in English (written and spoken).

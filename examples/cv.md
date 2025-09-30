@@ -3,7 +3,7 @@ name: Ahmed Taha
 header:
   - text: |
       <span style="font-style: italic; font-weight: normal; display: block; margin-top: -7.5px; margin-bottom:5px;">
-      Entry-Level IT Help Desk Professional
+      Aspiring IT Support Specialist & System Administrator
       </span>
   - text: <span class="iconify" data-icon="tabler:mail"></span> ahmedtaha1234@gmail.com
     link: mailto:ahmedtaha1234@gmail.com
@@ -20,45 +20,49 @@ header:
 
 ## Profile
 
-Proactive and detail-oriented IT professional with hands-on experience in hardware and software troubleshooting, network support, and IT asset management. Skilled in diagnosing complex technical issues and providing effective user support through in-person, phone, and remote access channels. A patient and communicative problem-solver with excellent analytical skills, committed to maintaining system efficiency and delivering high-quality employee support.
-
-## Technical Experience
-
-[**IT Specialist & Software Developer,** _ELHODA MEP Contracting_](https://github.com/Creative-Geek)
-~ 09/2021 – 09/2022 | _Cairo, Egypt_
-
-- Managed IT department assets by implementing and maintaining an on-premises custom file server to ensure data integrity and availability.
-- Provided comprehensive user support, diagnosing and troubleshooting complex hardware, software, and network problems for employees via remote access and in-person communication.
-- Developed automation scripts that interacted with Excel and AutoCAD to enhance team efficiency and streamline workflows.
-
-[**Store Developer & Technician,** _CompuMall_](https://github.com/Creative-Geek)
-~ 06/2023 – 09/2023 | _Ismailia, Egypt_
-
-- Delivered expert hardware troubleshooting, running diagnostics on computer hardware systems including motherboards, memory modules, and processors to resolve complex issues for customers.
-- Performed hardware installation and software upgrades, and provided basic computer training to customers to ensure system functionality.
-- Completed support tickets and consistently followed up with customers regarding previously solved issues to guarantee resolution and satisfaction.
+Highly motivated Computer Engineering graduate with hands-on experience in IT support, system administration, and network troubleshooting. Passionate about resolving technical challenges and providing excellent customer support. Proficient in managing Windows OS, implementing data backup solutions, and providing remote assistance. Eager to apply problem-solving and collaboration skills to contribute to an innovative IT team and grow within the service desk domain.
 
 ## Projects
 
 [**WGDrive,** _Automated File Distribution & Monitoring System_](https://github.com/Creative-Geek)
-~ Freelance Project
+~ Ongoing
 
-- Designed and deployed a resilient system for automated file monitoring and distribution, featuring a robust error handling and recovery architecture to ensure reliability.
-- Implemented a secure web dashboard for real-time monitoring, functioning as a remote-access system for configuration and running diagnostics.
-- Managed system deployment on a Virtual Private Server, utilizing a comprehensive logging system for effective troubleshooting.
+- Developed and deployed a robust system for automated file monitoring, downloading, and distribution, showcasing skills in system administration and data management.
+- Implemented secure authentication and remote access capabilities, ensuring data safety and enabling efficient off-site system management.
+- Engineered a resilient architecture with comprehensive logging, real-time monitoring, and automated error handling to support disaster recovery and ensure system reliability.
 
-[**Digital-Ḍād,** _Handwritten Exam Processing Application_](https://github.com/Creative-Geek/Digital-Dad)
+[**Digital- Ḍād,** _Handwriting Recognition Platform_](https://github.com/Creative-Geek)
 ~ 03/2023 – 07/2024
 
-- Co-developed a full-stack React application for scanning and processing documents, demonstrating strong analytical and problem-solving skills in designing an end-to-end solution.
-- Built an intuitive user interface focused on user-friendly design and efficient data handling processes for a seamless employee communication experience.
-- The project's research was published, highlighting advanced technical writing and documentation abilities relevant to creating training manuals.
+- Designed and deployed a full-stack React application for scanning and recognizing handwritten Arabic exams, demonstrating end-to-end project ownership.
+- Developed a user-facing image labeling application with React and Supabase, providing support and documentation for user contributions and ensuring a positive user experience.
+- Collaborated in a team to build the platform, contributing to both front-end usability and back-end data management and security.
 
 ## Skills
 
-**Technical Skills** — **Hardware & Networking:** Hardware Diagnostics & Repair (Motherboards, Processors, Memory Modules), Network Troubleshooting, Firewall Concepts, Hardware Installation & Upgrades. | **Software & Operating Systems:** Windows & Linux Environments, Software Installation & Upgrades, Operating Systems, Office Applications, Scripting (Python). | **Help Desk & Tools:** Help Desk Software Concepts, Remote Access Systems, Diagnostic Tools, Support Ticket Management, Technical Writing (Training Manuals), Git.
+**Technical Skills** — **IT Support & Administration:** Windows OS Installation & Configuration, Technical Support, System Administration, Network Troubleshooting (LAN/WAN, Wi-Fi), Data Backup & Restore, Antivirus & Endpoint Protection, Hardware Compatibility, Driver Updates. | **Tools & Technologies:** Remote Support (RDP, TeamViewer, AnyDesk), Git, GitHub, Jira, Linux, Docker, Microsoft Office Suite, Prisma, SQLite, PostgreSQL. | **Programming & Scripting:** Python, JavaScript, C++, Node.js, Flask.
 
-**Soft Skills** — High-Level Communication, Problem-Solving, Analytical & Diagnostic Skills, Patience & Understanding, Teamwork, Adaptability.
+**Soft Skills** — Communication, Teamwork, Problem-Solving, Adaptability, Customer Support, Time Management, Attention to Detail.
+
+## Technical Experience
+
+[**IT Specialist & Software Developer,** _ELHODA MEP Contracting_](https://elhodamep.com/)
+~ 09/2021 – 09/2022 | _Cairo, Egypt_
+
+- Implemented and managed an on-premises file server, performing regular data backup and restore operations to ensure data safety and support disaster recovery plans.
+- Provided comprehensive software and hardware technical support for employees, troubleshooting issues related to Windows OS, application crashes, and network connectivity.
+- Developed Python automation scripts to streamline workflows with Excel and AutoCAD, enhancing team efficiency and reducing manual data entry.
+
+[**IT Support Technician,** _CompuMall_](https://compu-mall.com/)
+~ 06/2023 – 09/2023 | _Ismailia, Egypt_
+
+- Delivered on-site customer support, diagnosing and resolving complex technical issues, including operating system errors, driver updates, and hardware compatibility problems.
+- Installed and configured software applications, including Microsoft Office, web browsers, and security tools, ensuring systems were secure and up-to-date.
+
+[**Technical Content Writer,** _E-CAMP_](https://www.facebook.com/ECAMPofficialpage/)
+~ 07/2024 – 11/2024 | _Cairo, Egypt_
+
+- Authored technical articles on AI and software engineering, demonstrating strong written communication and documentation skills by simplifying complex topics for a broad audience.
 
 ## Education
 
