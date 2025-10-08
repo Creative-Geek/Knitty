@@ -32,46 +32,44 @@ Knitty is a proof-of-concept Jupyter notebook that demonstrates how AI can be us
 The system operates through a sophisticated multi-stage pipeline:
 
 ```mermaid
-graph TD
-    A[CV PDF] --> B[PDF Text Extraction]
-    A1[Additional Info] --> B1[Combine CV Content]
+---
+config:
+  theme: redux
+---
+flowchart TD
+    A["CV PDF"] --> B["PDF Text Extraction"]
+    A1["Additional Info"] --> B1["Combine CV Content"]
     B --> B1
-    B1 --> C[CV Keyword Extraction<br/>Fast LLM]
-    B1 --> D[CV Embedding Generation<br/>Embed LLM]
-
-    E[Job URL/Text] --> F{Input Type?}
-    F -->|URL| G[Web Scraping<br/>Playwright + BeautifulSoup]
-    F -->|Text| H[Direct Text Processing]
-    G --> I[RAG Processing<br/>Context LLM + Vector Store]
+    B1 --> C["CV Keyword Extraction<br>Fast LLM"] & D["CV Embedding Generation<br>Embed LLM"] & M["Smart LLM Enhancement"]
+    E["Job URL/Text"] --> F{"Input Type?"}
+    F -- URL --> G["Web Scraping<br>Playwright + BeautifulSoup"]
+    F -- Text --> H["Direct Text Processing"]
+    G --> I["RAG Processing<br>Context LLM + Vector Store"]
     H --> I
-    I --> J[Job Keyword Extraction<br/>Fast LLM]
-    I --> K[Job Embedding Generation<br/>Embed LLM]
-
-    C --> L[Cosine Similarity Analysis]
+    I --> J["Job Keyword Extraction<br>Fast LLM"] & K["Job Embedding Generation<br>Embed LLM"] & M
+    C --> L["Cosine Similarity Analysis"] & M
     D --> L
-    J --> L
+    J --> L & M
     K --> L
-
-    L --> M[Smart LLM Enhancement]
-    B1 --> M
-    I --> M
-    C --> M
-    J --> M
-
-    M --> N[Enhanced CV Generation]
-    N --> O[Similarity Check]
-    O -->|Improved| P[Final CV Output]
-    O -->|Not Improved| Q[Iterative Retry]
+    L --> M
+    M --> N["Enhanced CV Generation"]
+    N --> O["Similarity Check"]
+    O -- Improved --> P["Final CV Output"]
+    O -- Not Improved --> Q["Iterative Retry"]
     Q --> M
-
-    P --> R[HTML Export<br/>Special Sauce API]
-    P --> S[Markdown Export]
-
+    P --> R["HTML Export<br>Special Sauce API"] & S["Markdown Export"]
+     A:::Ash
+     M:::Ash
+     E:::Ash
+     L:::Ash
+     P:::Ash
+    classDef Ash stroke-width:1px, stroke-dasharray:none, stroke:#999999, fill:#EEEEEE, color:#000000
     style A fill:#e1f5fe
+    style M fill:#f3e5f5
     style E fill:#e8f5e8
     style L fill:#fff3e0
-    style M fill:#f3e5f5
     style P fill:#e8f5e8
+
 ```
 
 ### LLM Specialization
