@@ -14,6 +14,12 @@ class Settings(BaseSettings):
     fast_llm_api_base: str
     fast_llm_model_name: str = "llama3-8b-8192"
     
+    # Context LLM Configuration (for large document processing)
+    # added to match .env keys like CONTEXT_LLM_API_KEY to avoid pydantic extra errors
+    context_llm_api_key: Optional[str] = None
+    context_llm_api_base: Optional[str] = None
+    context_llm_model_name: Optional[str] = "gemini-2.5-flash"
+    
     # Smart LLM Configuration
     smart_llm_api_key: str
     smart_llm_api_base: str
