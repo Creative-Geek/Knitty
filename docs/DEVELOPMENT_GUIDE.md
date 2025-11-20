@@ -1,5 +1,7 @@
 # Development Guide
 
+> **⚠️ ALPHA VERSION:** This project is experimental and in active development.
+
 This guide provides instructions for setting up and running the Knitty CV Tailoring System notebook, including environment configuration, dependencies, and usage patterns.
 
 ## Prerequisites
@@ -20,6 +22,7 @@ cd Knitty
 ### 2. Create Virtual Environment
 
 Using `uv` (recommended, as shown in project):
+
 ```bash
 # Install uv if not already installed
 pip install uv
@@ -33,6 +36,7 @@ source .venv/bin/activate
 ```
 
 Alternative using standard Python:
+
 ```bash
 python -m venv venv
 # On Windows:
@@ -82,6 +86,7 @@ ipykernel = "^6.25.0"
 ### 4. Install Playwright Browsers
 
 Playwright requires browser installation:
+
 ```bash
 playwright install chromium
 ```
@@ -113,7 +118,25 @@ SPECIAL_SAUCE_API_KEY=your-html-api-key
 
 ## Running the Application
 
-### 1. Start Jupyter
+> **⚠️ Both interfaces are in ALPHA stage - experimental only**
+
+### Option 1: FastAPI Backend (⚠️ ALPHA)
+
+```bash
+python app.py
+# or
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Access the API at `http://localhost:8000` with interactive docs at `http://localhost:8000/docs`
+
+### Option 2: Streamlit GUI (⚠️ ALPHA)
+
+```bash
+streamlit run streamlit_app.py
+```
+
+### Option 3: Jupyter Notebook (Development/Research)
 
 ```bash
 jupyter notebook
@@ -128,6 +151,7 @@ Navigate to and open `notebook.ipynb` in your Jupyter environment.
 ### 3. Prepare Input Files
 
 Place your files in the `examples/` directory:
+
 - **CV**: `examples/cv.pdf` (your PDF resume)
 - **Additional Info**: `examples/additionalInfo.txt` (optional candidate information)
 - **Job Posting**: Either provide a URL in the notebook or save text to `examples/jobPostingText.txt`
@@ -149,12 +173,14 @@ Run the notebook cells sequentially:
 The system uses several configuration files in the `config/` directory:
 
 ### Prompts
+
 - `cvKeywordsPrompt.txt`: CV keyword extraction prompt
-- `jobKeywordsPrompt.txt`: Job keyword extraction prompt  
+- `jobKeywordsPrompt.txt`: Job keyword extraction prompt
 - `jobRagPrompt.txt`: Job posting RAG extraction prompt
 - `cvEnhancePrompt.txt`: CV enhancement prompt
 
 ### Templates
+
 - `cvTemplate.txt`: Output CV template structure
 
 ## Usage Patterns
@@ -174,12 +200,14 @@ additionalInfoPath = "examples/additionalInfo.txt"
 ### URL vs Text Input
 
 **For Job URLs**:
+
 ```python
 jobPostingUrl = "https://linkedin.com/jobs/view/123456"
 # System will scrape and process automatically
 ```
 
 **For Direct Text**:
+
 ```python
 jobPostingUrl = ""  # Leave empty
 # Place job text in examples/jobPostingText.txt
@@ -188,6 +216,7 @@ jobPostingUrl = ""  # Leave empty
 ### Customizing Prompts
 
 Edit files in `config/` directory to customize:
+
 - Keyword extraction criteria
 - CV enhancement instructions
 - Output template structure
@@ -205,6 +234,7 @@ The notebook generates several output files:
 ### Common Issues
 
 **Import Errors**:
+
 ```bash
 # Ensure all dependencies are installed
 uv sync
@@ -213,17 +243,20 @@ pip install -r requirements.txt
 ```
 
 **API Key Errors**:
+
 - Verify `.env` file exists and contains valid API keys
 - Check API endpoint URLs are correct
 - Ensure sufficient API credits/quota
 
 **Playwright Issues**:
+
 ```bash
 # Reinstall browsers
 playwright install chromium
 ```
 
 **PDF Processing Errors**:
+
 - Ensure PDF is not password-protected
 - Verify file path is correct
 - Check PDF contains extractable text (not just images)
@@ -231,14 +264,17 @@ playwright install chromium
 ### Performance Optimization
 
 **For Large Job Postings**:
+
 - The RAG implementation may struggle with very large pages
 - Consider preprocessing to extract relevant sections
 
 **For Multiple CVs**:
+
 - Restart kernel between different CV processing sessions
 - Clear output to manage memory usage
 
 **API Rate Limits**:
+
 - Add delays between API calls if hitting rate limits
 - Consider using different API providers for different LLM roles
 
@@ -247,6 +283,7 @@ playwright install chromium
 ### Notebook Structure
 
 The notebook is organized into logical sections:
+
 1. Environment setup and imports
 2. Input configuration and loading
 3. Processing functions definition
@@ -256,6 +293,7 @@ The notebook is organized into logical sections:
 ### Future Web Application
 
 The notebook serves as a prototype for a future web application:
+
 - Template structure is web-ready (YAML + Markdown)
 - Functions can be extracted into modules
 - Configuration system supports multiple environments
@@ -264,6 +302,7 @@ The notebook serves as a prototype for a future web application:
 ### Extension Points
 
 Areas for future enhancement:
+
 - Batch processing multiple CVs
 - Additional output formats (PDF, DOCX)
 - Integration with job board APIs

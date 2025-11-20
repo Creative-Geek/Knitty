@@ -1,8 +1,18 @@
 # Knitty: CV Tailoring System
 
+> **⚠️ ALPHA VERSION:** This entire project is experimental and in active development.
+
 This project is a Jupyter notebook-based application designed to automatically tailor a candidate's curriculum vitae (CV) to a specific job description. The system analyzes the candidate's CV and target job posting, extracts relevant keywords, and rewrites the CV to maximize alignment with job requirements using AI-powered enhancement.
 
 The goal is to improve the chances of passing through automated screening systems (ATS) and catching recruiter attention by strategically highlighting the most relevant aspects of a candidate's profile.
+
+## Available Interfaces
+
+- **FastAPI Backend** (⚠️ ALPHA): REST API for programmatic access
+- **Streamlit GUI** (⚠️ ALPHA): Web interface for interactive enhancement
+- **Jupyter Notebook**: For research and experimentation
+
+**⚠️ All interfaces are experimental and not recommended for production use.**
 
 ## Core Features
 

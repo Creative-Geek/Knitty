@@ -10,11 +10,22 @@
 
 <br>
 
+> **⚠️ ALPHA VERSION WARNING ⚠️**
+>
+> **This entire project is currently in ALPHA stage and should be considered experimental.**
+> Both the FastAPI backend and Streamlit GUI are under active development and not recommended for production use.
+> Use at your own risk for testing and experimentation purposes only.
+
 ## 🚀 Overview
 
-Knitty is a proof-of-concept Jupyter notebook that demonstrates how AI can be used to automatically enhance CVs for better job application success. The system analyzes your existing CV alongside a target job posting, then generates an optimized version that better aligns with the job requirements while maintaining authenticity and professional quality.
+Knitty is a production-ready AI-powered CV tailoring system that optimizes resumes for specific job postings. The system analyzes your existing CV alongside a target job posting, then generates an optimized version that better aligns with the job requirements while maintaining authenticity and professional quality.
 
-**⚠️ Important Note: This notebook serves as a starting point for a much larger project.** The current implementation is a research prototype that showcases the core concepts and workflow. We envision expanding this into a full-scale application with a web interface, database integration, and enterprise-grade features.
+You can access Knitty through:
+
+- **⚙️ FastAPI Backend** (⚠️ ALPHA): RESTful API for programmatic access and integration
+- **🖥️ Streamlit GUI** (⚠️ ALPHA): User-friendly web interface for interactive CV enhancement
+
+> **⚠️ Both interfaces are experimental and in active development.**
 
 ## ✨ Key Features
 
@@ -99,51 +110,74 @@ flowchart TD
 
 ## 🚀 Getting Started
 
-### Prerequisites
+### Installation
 
 ```bash
-pip install python-dotenv numpy
-pip install langchain-community langchain-openai langchain-core
-pip install beautifulsoup4 playwright requests
+# Clone the repository
+git clone https://github.com/Creative-Geek/Knitty.git
+cd Knitty
+
+# Install dependencies
+pip install -e .
+
+# Install Playwright browsers for web scraping
 playwright install chromium
 ```
 
 ### Environment Setup
 
-Create a `.env` file with your LLM API configurations:
+Create a `.env` file in the project root with your LLM API configurations:
 
 ```env
-# Fast LLM for keyword extraction
+# Fast LLM (Keyword Extraction) - e.g., Groq Llama 3
 FAST_LLM_API_KEY="your-api-key"
-FAST_LLM_API_BASE="https://api.provider.com/v1"
-FAST_LLM_MODEL_NAME="openai/gpt-oss-120b"
+FAST_LLM_API_BASE="https://api.groq.com/openai/v1"
+FAST_LLM_MODEL_NAME="llama3-8b-8192"
 
-# Context LLM for RAG processing
-CONTEXT_LLM_API_KEY="your-api-key"
-CONTEXT_LLM_API_BASE="https://api.provider.com/v1"
-CONTEXT_LLM_MODEL_NAME="your-context-model"
-
-# Embedding LLM for similarity analysis
-EMBED_LLM_API_KEY="your-api-key"
-EMBED_LLM_API_BASE="https://api.provider.com/v1"
-EMBED_LLM_MODEL_NAME="text-embedding-model"
-
-# Smart LLM for CV generation
+# Smart LLM (CV Enhancement) - e.g., OpenAI GPT or Google Gemini
 SMART_LLM_API_KEY="your-api-key"
-SMART_LLM_API_BASE="https://api.provider.com/v1"
-SMART_LLM_MODEL_NAME="gemini-2.5-pro"
+SMART_LLM_API_BASE="https://api.openai.com/v1"
+SMART_LLM_MODEL_NAME="gpt-4-turbo"
 
-# Optional: HTML conversion service
+# Embedding LLM (Similarity Analysis) - e.g., OpenAI Embeddings
+EMBED_LLM_API_KEY="your-api-key"
+EMBED_LLM_API_BASE="https://api.openai.com/v1"
+EMBED_LLM_MODEL_NAME="text-embedding-ada-002"
+
+# Optional: HTML Generation Service
 SPECIAL_SAUCE_API_URL="https://cv-service.com/generate"
 SPECIAL_SAUCE_API_KEY="your-service-key"
 ```
 
-### Usage
+### Running the Application
 
-1. **Open the notebook**: Launch `notebook.ipynb` in Jupyter
-2. **Configure inputs**: Set your CV path and job posting URL/text
-3. **Run sequentially**: Execute cells in order for complete processing
-4. **Review results**: Check similarity improvements and final CV output
+> **⚠️ ALPHA WARNING:** Both interfaces are experimental. Use for testing and development only.
+
+#### Option 1: FastAPI Backend (⚠️ ALPHA)
+
+```bash
+python app.py
+# or
+uvicorn app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Access the API at `http://localhost:8000` with interactive API docs at `http://localhost:8000/docs`
+
+#### Option 2: Streamlit GUI (⚠️ ALPHA)
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Open your browser to `http://localhost:8501` and start enhancing CVs through an intuitive interface.
+
+#### Option 3: Jupyter Notebook
+
+```bash
+jupyter notebook notebook.ipynb
+```
+
+Great for experimentation and research.
 
 ## 📊 How It Works
 
@@ -192,14 +226,15 @@ You'll have to wait for that 😉
 
 ## 🤝 Contributing
 
-We welcome contributions to help evolve this prototype into a production-ready platform! Areas where we need help:
+We welcome contributions to enhance and evolve Knitty! Areas where we could use help:
 
-- **Backend Development**: FastAPI/Django web framework implementation
-- **Frontend Development**: React/Vue.js user interface design
-- **DevOps**: Docker containerization and cloud deployment
-- **AI/ML**: Model fine-tuning and optimization
-- **Testing**: Comprehensive test suite development
+- **Frontend Enhancement**: Improve the Streamlit GUI with additional features
+- **Backend Optimization**: Performance improvements to the FastAPI server
+- **Model Fine-tuning**: Optimize LLM prompts and enhance CV generation quality
+- **DevOps**: Docker containerization and cloud deployment setup
+- **Testing**: Expand test coverage and add integration tests
 - **Documentation**: API documentation and user guides
+- **Feature Development**: New features like batch processing, templates, and analytics
 
 ## 📚 Documentation
 
@@ -222,5 +257,5 @@ This project is currently in research and development phase. License terms will 
 ---
 
 <div align="center">
-  <strong>Ready to revolutionize your job applications? Start with the notebook and join us in building the future of CV optimization!</strong>
+  <strong>Ready to revolutionize your job applications? Get started with Knitty today!</strong>
 </div>
