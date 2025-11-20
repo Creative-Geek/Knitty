@@ -1,5 +1,7 @@
 # 🚀 Knitty Quick Start Guide
 
+> **⚠️ ALPHA VERSION:** This project is experimental. Use for testing and development only.
+
 Get up and running with Knitty in 5 minutes!
 
 ## Step 1: Install Dependencies
@@ -35,7 +37,28 @@ EMBED_LLM_MODEL_NAME=text-embedding-ada-002
 
 ## Step 3: Choose Your Interface
 
-### Option A: Streamlit GUI (Recommended for beginners)
+> **⚠️ Both interfaces are in ALPHA stage - experimental only**
+
+### Option A: FastAPI (⚠️ ALPHA)
+
+```bash
+python app.py
+```
+
+Then open your browser to:
+
+- API Documentation: `http://localhost:8000/docs`
+- Health Check: `http://localhost:8000/health`
+
+**Example API Call:**
+
+```bash
+curl -X POST "http://localhost:8000/api/v1/enhance-cv" \
+  -F "cv_file=@examples/cv.pdf" \
+  -F "job_posting_text=Software Engineer position..."
+```
+
+### Option B: Streamlit GUI (⚠️ ALPHA)
 
 ```bash
 streamlit run streamlit_app.py
@@ -43,32 +66,17 @@ streamlit run streamlit_app.py
 
 Then open your browser to `http://localhost:8501`
 
-**Features:**
-- Easy file upload
-- Visual progress indicators
-- Results preview
-- Download enhanced CV
-
-### Option B: FastAPI (For developers/API integration)
-
-```bash
-python app.py
-```
-
-Then open your browser to:
-- API Documentation: `http://localhost:8000/docs`
-- Health Check: `http://localhost:8000/health`
-
-**Example API Call:**
-```bash
-curl -X POST "http://localhost:8000/api/v1/enhance-cv" \
-  -F "cv_file=@examples/cv.pdf" \
-  -F "job_posting_text=Software Engineer position..."
-```
-
 ## Step 4: Use It!
 
-### Using Streamlit GUI:
+### Using FastAPI
+
+See the interactive API documentation at `http://localhost:8000/docs` for:
+
+- Request formats
+- Response schemas
+- Try-it-out functionality
+
+### Using Streamlit GUI
 
 1. Upload your CV (PDF file)
 2. Provide job posting (URL or paste text)
@@ -76,13 +84,6 @@ curl -X POST "http://localhost:8000/api/v1/enhance-cv" \
 4. Click "Enhance My CV"
 5. Wait for processing (~30-60 seconds)
 6. Download your enhanced CV!
-
-### Using FastAPI:
-
-See the interactive API documentation at `http://localhost:8000/docs` for:
-- Request formats
-- Response schemas
-- Try-it-out functionality
 
 ## 🧪 Test It Works
 
@@ -103,25 +104,28 @@ curl http://localhost:8000/health
 ## ❓ Troubleshooting
 
 ### "Module not found" errors
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Playwright errors
+
 ```bash
 playwright install chromium
 ```
 
 ### API key errors
+
 - Check your `.env` file exists
 - Verify all API keys are set correctly
 - Ensure API keys have proper permissions
 
 ### Port already in use
+
 - FastAPI: Change port in `app.py` (default: 8000)
 - Streamlit: Use `--server.port 8502` flag
 
 ## 🎉 You're Ready!
 
 Start enhancing CVs with AI-powered optimization!
-

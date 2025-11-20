@@ -1,4 +1,8 @@
-"""FastAPI application setup and routes."""
+"""FastAPI application setup and routes.
+
+⚠️ ALPHA VERSION - Experimental ⚠️
+This API is in ALPHA stage and should be considered experimental.
+"""
 
 import logging
 import tempfile
@@ -35,9 +39,9 @@ class EnhancementResponse(BaseModel):
 def create_app() -> FastAPI:
     """Create and configure FastAPI application."""
     app = FastAPI(
-        title="Knitty API",
-        description="An intelligent CV tailoring system that optimizes resumes for specific job postings",
-        version="0.1.0",
+        title="Knitty API (ALPHA)",
+        description="⚠️ ALPHA VERSION ⚠️\n\nAn intelligent CV tailoring system that optimizes resumes for specific job postings.\n\nThis API is experimental and in active development.",
+        version="0.1.0-alpha",
     )
     
     # CORS middleware

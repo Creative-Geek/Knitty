@@ -1,4 +1,8 @@
-"""Streamlit GUI for Knitty CV Enhancement."""
+"""Streamlit GUI for Knitty CV Enhancement.
+
+⚠️ ALPHA VERSION - Experimental Feature ⚠️
+This interface is in ALPHA stage and should be considered experimental.
+"""
 
 import streamlit as st
 import asyncio
@@ -6,12 +10,14 @@ import sys
 from pathlib import Path
 import tempfile
 import json
+import zlib
+import base64
 from knitty.core.pipeline import EnhancementPipeline
 from knitty.config.settings import get_settings
 
 # Page configuration
 st.set_page_config(
-    page_title="Knitty - Resume Factory",
+    page_title="Knitty - Resume Factory (ALPHA)",
     page_icon="🧵",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -32,6 +38,18 @@ st.markdown("""
             color: #666;
             text-align: center;
             margin-bottom: 2rem;
+        }
+        .alpha-banner {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #000;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin: 1rem 0;
+            border: 3px solid #ffa500;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         .metric-card {
             background-color: #f0f2f6;
@@ -72,6 +90,44 @@ if "results" not in st.session_state:
     st.session_state.results = None
 
 
+def generate_gimmecv_url(markdown_cv: str, base_url: str = 'https://gimmecv.creative-geek.tech') -> dict:
+    """
+    Generates a GimmeCV URL with embedded CV data.
+    
+    Args:
+        markdown_cv: CV content in Markdown format
+        base_url: Your GimmeCV instance URL
+    
+    Returns:
+        Dictionary with URL and statistics
+    """
+    # Step 1: Convert string to bytes
+    text_bytes = markdown_cv.encode('utf-8')
+    
+    # Step 2: Compress with zlib (maximum compression)
+    compressed = zlib.compress(text_bytes, level=9)
+    
+    # Step 3: Convert to Base64
+    base64_str = base64.b64encode(compressed).decode('ascii')
+    
+    # Step 4: Make URL-safe (Base64URL)
+    base64_url = (base64_str
+                  .replace('+', '-')
+                  .replace('/', '_')
+                  .replace('=', ''))
+    
+    # Step 5: Build complete URL
+    url = f"{base_url}/#{base64_url}"
+    
+    return {
+        'url': url,
+        'original_length': len(markdown_cv),
+        'compressed_length': len(base64_url),
+        'compression_ratio': f"{((1 - len(base64_url) / len(markdown_cv)) * 100):.1f}%",
+        'total_url_length': len(url)
+    }
+
+
 def run_async(coro):
     """Run async function in Streamlit."""
     try:
@@ -88,8 +144,17 @@ def run_async(coro):
 
 def main():
     """Main application."""
+    # ALPHA Warning Banner
+    st.markdown("""
+        <div class="alpha-banner">
+            ⚠️ ALPHA VERSION - EXPERIMENTAL FEATURE ⚠️
+            <br>
+            <span style="font-size: 0.9rem;">This interface is in early development and experimental.</span>
+        </div>
+    """, unsafe_allow_html=True)
+    
     # Header
-    st.markdown('<h1 class="main-header">🧵 Knitty</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🧵 Knitty (ALPHA)</h1>', unsafe_allow_html=True)
     st.markdown(
         '<p class="sub-header">Resume Factory - Intelligent CV Tailoring System</p>',
         unsafe_allow_html=True
@@ -102,6 +167,10 @@ def main():
     # Sidebar
     with st.sidebar:
         st.header("⚙️ Configuration")
+        
+        # Alpha warning in sidebar
+        st.warning("⚠️ **ALPHA VERSION**\n\nThis interface is experimental. Please report any issues.")
+        
         st.info("""
         **How it works:**
         1. Upload your CV (PDF)
@@ -281,7 +350,46 @@ def main():
             
             # Enhanced CV
             st.subheader("✨ Enhanced CV")
-            st.markdown("**Preview:**")
+            
+            # GimmeCV button
+            col1, col2 = st.columns([3, 1])
+            with col1:
+                st.markdown("**Preview:**")
+            with col2:
+                if st.button("🚀 Open in GimmeCV", type="primary", use_container_width=True):
+                    try:
+                        gimmecv_result = generate_gimmecv_url(results['enhanced_cv'])
+                        
+                        # Show statistics
+                        st.info(f"""
+                        **GimmeCV URL Generated**
+                        - Original size: {gimmecv_result['original_length']} characters
+                        - Compressed size: {gimmecv_result['compressed_length']} characters
+                        - Compression: {gimmecv_result['compression_ratio']} reduction
+                        """)
+                        
+                        # Check URL length and show warnings
+                        url_length = gimmecv_result['total_url_length']
+                        if url_length > 100000:
+                            st.warning("⚠️ URL exceeds 100KB - may not work in most browsers")
+                        elif url_length > 50000:
+                            st.warning("⚠️ URL exceeds 50KB - may not work in older browsers")
+                        elif url_length > 32000:
+                            st.info("ℹ️ URL is large but should work in modern browsers")
+                        
+                        # Open in new tab using JavaScript
+                        st.markdown(f"""
+                        <script>
+                            window.open('{gimmecv_result['url']}', '_blank');
+                        </script>
+                        """, unsafe_allow_html=True)
+                        
+                        # Also provide link in case JavaScript doesn't work
+                        st.markdown(f"[Click here if the page didn't open automatically]({gimmecv_result['url']})")
+                        
+                    except Exception as e:
+                        st.error(f"Failed to generate GimmeCV URL: {str(e)}")
+            
             st.markdown(results['enhanced_cv'])
             
             # Download button
@@ -353,7 +461,8 @@ def main():
         """)
         
         st.markdown("---")
-        st.markdown("**Version:** 0.1.0")
+        st.markdown("**Version:** 0.1.0-alpha")
+        st.markdown("**Status:** ⚠️ ALPHA - Experimental")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 [project]
 name = "knitty"
-version = "0.1.0"
+version = "0.1.0-alpha"
 description = "An intelligent CV tailoring system that optimizes resumes for specific job postings"
 readme = "README.md"
 requires-python = ">=3.10"

@@ -1,5 +1,10 @@
 # Knitty Deployment Guide
 
+> **⚠️ ALPHA VERSION WARNING ⚠️**
+>
+> This entire project is in ALPHA stage and experimental. Not recommended for production use.
+> Deploy at your own risk for testing and development purposes only.
+
 ## 🚀 Production Deployment
 
 ### Prerequisites
@@ -44,7 +49,7 @@ EMBED_LLM_API_BASE=https://api.openai.com/v1
 EMBED_LLM_MODEL_NAME=text-embedding-ada-002
 ```
 
-### Running FastAPI
+### Running FastAPI (⚠️ ALPHA)
 
 ```bash
 # Development
@@ -54,7 +59,7 @@ python app.py
 gunicorn app:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
 ```
 
-### Running Streamlit
+### Running Streamlit (⚠️ ALPHA)
 
 ```bash
 streamlit run streamlit_app.py
@@ -164,4 +169,3 @@ server {
 - Consider using a task queue (Celery) for long-running jobs
 - Use Redis for caching if needed
 - Database for storing CVs/jobs (optional)
-

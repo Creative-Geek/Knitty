@@ -1,4 +1,8 @@
-"""FastAPI application entry point."""
+"""FastAPI application entry point.
+
+⚠️ ALPHA VERSION - Experimental ⚠️
+This API is in ALPHA stage and should be considered experimental.
+"""
 
 import uvicorn
 from knitty.api.app import create_app

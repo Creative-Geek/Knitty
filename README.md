@@ -10,14 +10,22 @@
 
 <br>
 
+> **⚠️ ALPHA VERSION WARNING ⚠️**
+>
+> **This entire project is currently in ALPHA stage and should be considered experimental.**
+> Both the FastAPI backend and Streamlit GUI are under active development and not recommended for production use.
+> Use at your own risk for testing and experimentation purposes only.
+
 ## 🚀 Overview
 
 Knitty is a production-ready AI-powered CV tailoring system that optimizes resumes for specific job postings. The system analyzes your existing CV alongside a target job posting, then generates an optimized version that better aligns with the job requirements while maintaining authenticity and professional quality.
 
 You can access Knitty through:
 
-- **🖥️ Web GUI**: User-friendly Streamlit interface for interactive CV enhancement
-- **⚙️ API**: RESTful FastAPI backend for programmatic access and integration
+- **⚙️ FastAPI Backend** (⚠️ ALPHA): RESTful API for programmatic access and integration
+- **🖥️ Streamlit GUI** (⚠️ ALPHA): User-friendly web interface for interactive CV enhancement
+
+> **⚠️ Both interfaces are experimental and in active development.**
 
 ## ✨ Key Features
 
@@ -143,15 +151,9 @@ SPECIAL_SAUCE_API_KEY="your-service-key"
 
 ### Running the Application
 
-#### Option 1: Web GUI (Streamlit)
+> **⚠️ ALPHA WARNING:** Both interfaces are experimental. Use for testing and development only.
 
-```bash
-streamlit run streamlit_app.py
-```
-
-Open your browser to `http://localhost:8501` and start enhancing CVs through an intuitive interface.
-
-#### Option 2: API Server (FastAPI)
+#### Option 1: FastAPI Backend (⚠️ ALPHA)
 
 ```bash
 python app.py
@@ -160,6 +162,14 @@ uvicorn app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 Access the API at `http://localhost:8000` with interactive API docs at `http://localhost:8000/docs`
+
+#### Option 2: Streamlit GUI (⚠️ ALPHA)
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Open your browser to `http://localhost:8501` and start enhancing CVs through an intuitive interface.
 
 #### Option 3: Jupyter Notebook
 
